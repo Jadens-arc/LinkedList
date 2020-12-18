@@ -76,6 +76,13 @@ function LinkedList() {
 	}
 
 	/**
+	 * Remove the first item in the list
+	 */
+	this.shift = () => {
+		this.remove(0);
+	}
+
+	/**
 	 * Display all item in list
 	 */
 	this.display = () => {
