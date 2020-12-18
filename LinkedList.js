@@ -65,6 +65,17 @@ function LinkedList() {
 	}
 
 	/**
+	 * Prepend item to beginning of list
+	 */
+	this.unshift = value => {
+		let firstNode = this.head.next;
+		let newFirstNode = new Node(value);
+
+		this.head.next = newFirstNode;
+		newFirstNode.next = firstNode;
+	}
+
+	/**
 	 * Display all item in list
 	 */
 	this.display = () => {
@@ -84,5 +95,6 @@ myList.push(5);
 myList.push(6);
 myList.push(7);
 myList.push(125);
-myList.remove(-1);
+myList.unshift(2)
+myList.remove(1);
 myList.display();
