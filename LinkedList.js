@@ -58,6 +58,13 @@ function LinkedList() {
 	}
 
 	/**
+	 * Remove the last item in the list
+	 */
+	this.pop = () => {
+		this.remove(this.length - 1);
+	}
+
+	/**
 	 * Display all item in list
 	 */
 	this.display = () => {
