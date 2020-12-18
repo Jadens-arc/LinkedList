@@ -23,6 +23,10 @@ function LinkedList() {
 		}
 	}
 
+	/**
+	 * Remove an item at a specific index in the list
+	 * @param {Number} index 
+	 */
 	this.remove = index => {
 		this.isOutOfBound(index);
 
