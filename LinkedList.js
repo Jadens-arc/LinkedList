@@ -83,6 +83,29 @@ function LinkedList() {
 	}
 
 	/**
+	 * Reverse the list
+	 */
+	this.reverse = () => {
+		this.push(null); // the new head
+
+		let prevNode = null; //keep track of the previous node which the current node will later point to
+		let curNode = this.head;
+
+		// iterate through every node in the list
+		while (curNode) {
+			let nextNode = curNode.next; // store the next node to be advanced to
+			curNode.next = prevNode; // make the current node point to the previous node
+
+			prevNode = curNode; // then set the previous node variable to the current node so that we can point back to it later
+			curNode = nextNode; // then advance the current node to the next node which was stored earlier
+		}
+
+		this.head = prevNode; // set the head to point to the previous node completing the reversal
+
+		this.pop() // remove the old head
+	}
+
+	/**
 	 * Display all item in list
 	 */
 	this.display = () => {
@@ -104,4 +127,5 @@ myList.push(7);
 myList.push(125);
 myList.unshift(2)
 myList.remove(1);
+myList.reverse();
 myList.display();
