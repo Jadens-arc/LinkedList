@@ -179,6 +179,21 @@ function LinkedList() {
 		return newList;
 	}
 
+	this.toString = () => {
+		let string = "[";
+		let curNode = this.head;
+
+		while (curNode.next) {
+			curNode = curNode.next;
+			string += curNode.value;
+			if (curNode.next) {
+				string += ', ';
+			}
+		}
+		
+		string += ']'
+		return string;
+	}
 
 }
 
@@ -200,3 +215,4 @@ let newList = myList.map(item => {
 newList.set(1, 'jaden')
 newList.display();
 console.log(newList.get(1))
+console.log(`${newList}`)
