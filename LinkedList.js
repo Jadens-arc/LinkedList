@@ -31,6 +31,19 @@ function LinkedList() {
 	}
 
 	/**
+	 * Retrieve data from a specific index in the array
+	 * @param {Number} index 
+	 */
+	this.get = index => {
+		this.isOutOfBound(index);
+		let curNode = this.head;
+		for (let curIndex = -1; curIndex != index; curIndex++) {
+			curNode = curNode.next;
+		}
+		return curNode.value;
+	}
+
+	/**
 	 * Remove an item at a specific index in the list
 	 * @param {Number} index 
 	 */
@@ -171,3 +184,4 @@ let newList = myList.map(item => {
 	return item * item;
 });
 newList.display();
+console.log(newList.get(1))
