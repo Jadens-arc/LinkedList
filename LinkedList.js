@@ -115,6 +115,37 @@ function LinkedList() {
 			console.log(curNode.value);
 		}
 	}
+
+	/**
+	 * Call a function on each item in your list
+	 * @param {Function} callback 
+	 */
+	this.forEach = callback => {
+		let curNode = this.head;
+		while (curNode.next) {
+			curNode = curNode.next;
+			callback(curNode.value);
+		}
+	}
+
+	/**
+	 * Call a function on each element in the list and get a new list containing all the modified values
+	 * @param {Function} callback 
+	 * @return {LinkedList} the new list with the modified values
+	 */
+	this.map = callback => {
+		let curNode = this.head;
+		let newList = new LinkedList();
+
+		while (curNode.next) {
+			curNode = curNode.next;
+			newList.push(callback(curNode.value));
+		}
+
+		return newList;
+	}
+
+	
 }
 
 
@@ -128,4 +159,8 @@ myList.push(125);
 myList.unshift(2)
 myList.remove(1);
 myList.reverse();
-myList.display();
+let newList = myList.map(item => {
+	console.log(item);
+	return item * item;
+});
+newList.display();
