@@ -44,6 +44,20 @@ function LinkedList() {
 	}
 
 	/**
+	 * Set a the value of a specific index to a specified value
+	 * @param {Number} index 
+	 * @param {*} value 
+	 */
+	this.set = (index, value) => {
+		this.isOutOfBound(index);
+		let curNode = this.head;
+		for (let curIndex = -1; curIndex != index; curIndex++) {
+			curNode = curNode.next;
+		}
+		curNode.value = value;
+	}
+
+	/**
 	 * Remove an item at a specific index in the list
 	 * @param {Number} index 
 	 */
@@ -183,5 +197,6 @@ let newList = myList.map(item => {
 	console.log(item);
 	return item * item;
 });
+newList.set(1, 'jaden')
 newList.display();
 console.log(newList.get(1))
