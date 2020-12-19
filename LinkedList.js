@@ -1,8 +1,15 @@
+/**
+ * A single node meant to be used in a linked list
+ * @param {*} value 
+ */
 function Node(value = null) {
 	this.value = value;
 	this.next = null;
 }
 
+/**
+ * Linearly store related data that can be easily used with specialized functions
+ */
 function LinkedList() {
 	this.head = new Node();
 	this.length = 0;
@@ -17,7 +24,7 @@ function LinkedList() {
 	 * Check if index is within the list, if not then throw error
 	 * @param {Number} index 
 	 */
-	this.isOutOfBound = index => 	{
+	this.isOutOfBound = index => {
 		if (!this.doesIndexExist(index)) {
 			throw 'OUT OF BOUNDS';
 		}
@@ -145,7 +152,7 @@ function LinkedList() {
 		return newList;
 	}
 
-	
+
 }
 
 
