@@ -179,6 +179,9 @@ function LinkedList() {
 		return newList;
 	}
 
+	/**
+	 * Handle printing list as a string
+	 */
 	this.toString = () => {
 		let string = "[";
 		let curNode = this.head;
