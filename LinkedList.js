@@ -17,6 +17,7 @@ function LinkedList() {
   /**
    * Check if index is within the list
    * @param {Number} index
+   * @returns {Boolean} Is the index is in the list
    */
   this.doesIndexExist = (index) => index < this.length && index >= 0;
 
@@ -33,6 +34,7 @@ function LinkedList() {
   /**
    * Retrieve data from a specific index in the array
    * @param {Number} index
+   * @returns {*} The data stored at the given index
    */
   this.get = (index) => {
     this.isOutOfBound(index);
@@ -93,6 +95,7 @@ function LinkedList() {
 
   /**
    * Remove the last item in the list
+   * @returns {*} Last item in the list before it is removed
    */
   this.pop = () => {
     let workingNode = this.get(this.length - 1);
@@ -114,6 +117,7 @@ function LinkedList() {
 
   /**
    * Remove the first item in the list
+   * @returns {*} First item in the list before it is removed
    */
   this.shift = () => {
     let workingNode = this.get(0);
@@ -170,7 +174,7 @@ function LinkedList() {
   /**
    * Call a function on each element in the list and get a new list containing all the modified values
    * @param {Function} callback
-   * @return {LinkedList} the new list with the modified values
+   * @returns {LinkedList} the new list with the modified values
    */
   this.map = (callback) => {
     let curNode = this.head;
