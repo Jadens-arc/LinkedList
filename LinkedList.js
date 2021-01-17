@@ -116,7 +116,9 @@ function LinkedList() {
    * Remove the first item in the list
    */
   this.shift = () => {
+    let workingNode = this.get(0);
     this.remove(0);
+    return workingNode;
   };
 
   /**
@@ -212,12 +214,12 @@ myList.push(125);
 myList.unshift(2);
 myList.remove(1);
 console.log(`${myList}`);
+console.log(myList.shift());
 myList.reverse();
 console.log(myList.pop());
 let newList = myList.map((item) => {
   return item * item;
 });
 newList.set(1, "jaden");
-console.log(newList.get(1));
-console.log(`${newList}`);
-console.log(newList.pop());
+console.log("list 1: " + myList);
+console.log("list 2: " + newList);
