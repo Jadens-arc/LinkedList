@@ -75,6 +75,7 @@ function LinkedList() {
     }
 
     prevNode.next = curNode.next;
+    this.length--;
   };
 
   /**
@@ -96,7 +97,7 @@ function LinkedList() {
   this.pop = () => {
     let workingNode = this.get(this.length - 1);
     this.remove(this.length - 1);
-    return workingNode.value;
+    return workingNode;
   };
 
   /**
@@ -108,6 +109,7 @@ function LinkedList() {
 
     this.head.next = newFirstNode;
     newFirstNode.next = firstNode;
+    this.length++;
   };
 
   /**
@@ -209,12 +211,13 @@ myList.push(7);
 myList.push(125);
 myList.unshift(2);
 myList.remove(1);
+console.log(`${myList}`);
 myList.reverse();
+console.log(myList.pop());
 let newList = myList.map((item) => {
-  console.log(item);
   return item * item;
 });
 newList.set(1, "jaden");
-newList.display();
 console.log(newList.get(1));
 console.log(`${newList}`);
+console.log(newList.pop());
