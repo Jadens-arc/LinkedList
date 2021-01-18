@@ -207,6 +207,10 @@ function LinkedList() {
     return string;
   };
 
+  /**
+   * Get an exact copy of the list
+   * @returns an exact copy of the list
+   */
   this.copy = () => {
     return this.map((item) => item);
   };
