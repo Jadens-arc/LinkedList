@@ -206,24 +206,45 @@ function LinkedList() {
     string += "]";
     return string;
   };
+
+  this.copy = () => {
+    return this.map((item) => item);
+  };
+
+  /**
+   * Sort the array using quicksort
+   * @param {LinkedList} arr the list to be sorted
+   */
+  this.sort = (arr = this.copy()) => {
+    if (arr.length <= 1) {
+      return arr;
+    }
+    let pivot = arr.pop();
+
+    let lesser = new LinkedList();
+    let greater = new LinkedList();
+
+    arr.forEach((item) => {
+      if (item > pivot) {
+        greater.push(item);
+      } else {
+        lesser.push(item);
+      }
+    });
+
+    return this.sort(lesser) + pivot + this.sort(greater);
+  };
 }
 
 let myList = new LinkedList();
 myList.push(1);
-myList.push(3);
-myList.push(5);
-myList.push(6);
-myList.push(7);
 myList.push(125);
+myList.push(3);
+myList.push(6);
+myList.push(5);
+myList.push(7);
 myList.unshift(2);
 myList.remove(1);
 console.log(`${myList}`);
-console.log(myList.shift());
-myList.reverse();
-console.log(myList.pop());
-let newList = myList.map((item) => {
-  return item * item;
-});
-newList.set(1, "jaden");
-console.log("list 1: " + myList);
-console.log("list 2: " + newList);
+let newList = myList.sort();
+console.log(`${newList}`);
