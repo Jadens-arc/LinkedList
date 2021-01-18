@@ -208,6 +208,17 @@ function LinkedList() {
   };
 
   /**
+   * Concatenate a new list to the end of this list
+   * @param {LinkedList} secondArr
+   */
+  this.concat = (secondArr) => {
+    secondArr.forEach((item) => {
+      this.push(item);
+    });
+    return this;
+  };
+
+  /**
    * Get an exact copy of the list
    * @returns an exact copy of the list
    */
@@ -236,7 +247,7 @@ function LinkedList() {
       }
     });
 
-    return this.sort(lesser) + pivot + this.sort(greater);
+    return this.sort(lesser).concat([pivot]).concat(this.sort(greater));
   };
 }
 
