@@ -126,7 +126,7 @@ function LinkedList() {
   };
 
   /**
-   * Reverse the list
+   * Reverse this list
    */
   this.reverse = () => {
     this.push(null); // the new head
@@ -190,6 +190,7 @@ function LinkedList() {
 
   /**
    * Handle printing list as a string
+   * @returns a stringified version of this list
    */
   this.toString = () => {
     let string = "[";
@@ -210,6 +211,7 @@ function LinkedList() {
   /**
    * Concatenate a new list to the end of this list
    * @param {LinkedList} secondArr
+   * @returns this list
    */
   this.concat = (secondArr) => {
     secondArr.forEach((item) => {
@@ -228,7 +230,8 @@ function LinkedList() {
 
   /**
    * Sort the array using quicksort
-   * @param {LinkedList} arr the list to be sorted
+   * @param {LinkedList} arr the list to be sorted leave empty if you want to sort this list
+   * @returns a sorted version of this list
    */
   this.sort = (arr = this.copy()) => {
     if (arr.length <= 1) {
