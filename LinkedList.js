@@ -116,11 +116,7 @@ function LinkedList() {
    * Remove the last item in the list
    * @returns {*} Last item in the list before it is removed
    */
-  this.pop = () => {
-    let workingNode = this.get(this.length - 1);
-    this.remove(this.length - 1);
-    return workingNode;
-  };
+  this.pop = () => this.remove(this.length - 1);
 
   /**
    * Prepend item to beginning of list
@@ -282,6 +278,7 @@ myList.push(5);
 myList.push(7);
 myList.insert(4, 10);
 myList.unshift(2);
+myList.pop();
 console.log(myList.remove(1));
 console.log(`${myList}`);
 let newList = myList.sort();
