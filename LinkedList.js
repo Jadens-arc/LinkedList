@@ -135,11 +135,7 @@ function LinkedList() {
    * Remove the first item in the list
    * @returns {*} First item in the list before it is removed
    */
-  this.shift = () => {
-    let workingNode = this.get(0);
-    this.remove(0);
-    return workingNode;
-  };
+  this.shift = () => this.remove(0);
 
   /**
    * Reverse this list
