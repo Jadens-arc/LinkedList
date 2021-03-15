@@ -74,6 +74,7 @@ function LinkedList() {
 
     prevNode.next = new Node(value);
     prevNode.next.next = curNode;
+    this.length++;
   };
 
   /**
