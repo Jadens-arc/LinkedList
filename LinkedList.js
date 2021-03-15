@@ -279,7 +279,6 @@ myList.push(5);
 myList.push(7);
 myList.insert(4, 10);
 myList.unshift(2);
-myList.pop();
 console.log(myList.remove(1));
 console.log(`${myList}`);
 let newList = myList.sort();
