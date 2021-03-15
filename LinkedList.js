@@ -9,6 +9,7 @@ function Node(value = null) {
 
 /**
  * Linearly store related data that can be easily used with specialized functions
+ * @param {Array} userItems items that should be in the array from initialization
  */
 function LinkedList(userItems = []) {
   this.head = new Node();
