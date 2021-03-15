@@ -58,8 +58,9 @@ function LinkedList() {
   };
 
   /**
-   * Remove an item at a specific index in the list
+   * Remove an item at a specific index in the list and return its value
    * @param {Number} index
+   * @returns {*} The data previously stored at the specified index
    */
   this.remove = (index) => {
     this.isOutOfBound(index);
@@ -76,6 +77,7 @@ function LinkedList() {
 
     prevNode.next = curNode.next;
     this.length--;
+    return curNode.value;
   };
 
   /**
@@ -260,7 +262,7 @@ myList.push(6);
 myList.push(5);
 myList.push(7);
 myList.unshift(2);
-myList.remove(1);
+console.log(myList.remove(1));
 console.log(`${myList}`);
 let newList = myList.sort();
 console.log(`${newList}`);
