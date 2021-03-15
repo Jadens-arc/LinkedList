@@ -58,6 +58,25 @@ function LinkedList() {
   };
 
   /**
+   * Insert a value at a specific index (will cause other following items to shift by 1)
+   * @param {Number} index
+   * @param {*} value
+   */
+  this.insert = (index, value) => {
+    this.isOutOfBound(index);
+
+    let curNode = this.head;
+    let prevNode = null;
+    for (let i = -1; i < index; i++) {
+      prevNode = curNode;
+      curNode = curNode.next;
+    }
+
+    prevNode.next = new Node(value);
+    prevNode.next.next = curNode;
+  };
+
+  /**
    * Remove an item at a specific index in the list and return its value
    * @param {Number} index
    * @returns {*} The data previously stored at the specified index
@@ -261,6 +280,7 @@ myList.push(3);
 myList.push(6);
 myList.push(5);
 myList.push(7);
+myList.insert(4, 10);
 myList.unshift(2);
 console.log(myList.remove(1));
 console.log(`${myList}`);
