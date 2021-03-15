@@ -26,9 +26,7 @@ function LinkedList() {
    * @param {Number} index
    */
   this.isOutOfBound = (index) => {
-    if (!this.doesIndexExist(index)) {
-      throw "OUT OF BOUNDS";
-    }
+    if (!this.doesIndexExist(index)) throw "OUT OF BOUNDS";
   };
 
   /**
