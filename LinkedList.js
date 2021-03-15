@@ -10,7 +10,7 @@ function Node(value = null) {
 /**
  * Linearly store related data that can be easily used with specialized functions
  */
-function LinkedList() {
+function LinkedList(userItems = []) {
   this.head = new Node();
   this.length = 0;
 
@@ -112,6 +112,13 @@ function LinkedList() {
     curNode.next = new Node(value);
     this.length++;
   };
+
+  // Load parameters
+  userItems.forEach((item) => {
+    this.push(item);
+  });
+
+  // Decorative Functions (Not Necessary for Basic Function)
 
   /**
    * Remove the last item in the list
@@ -266,13 +273,7 @@ function LinkedList() {
   };
 }
 
-let myList = new LinkedList();
-myList.push(1);
-myList.push(125);
-myList.push(3);
-myList.push(6);
-myList.push(5);
-myList.push(7);
+let myList = new LinkedList([1, 125, 3, 6, 5, 7]);
 myList.insert(4, 10);
 myList.unshift(2);
 console.log(myList.remove(1));
